@@ -40,6 +40,8 @@ public class Main {
 			case 5:
 				System.out.println("Programa encerrado!");
 				break;
+			default:
+				System.out.println("Insira uma opção válida!");
 			}
 		}
 	}
