@@ -1,1 +1,74 @@
+public class Pilha {
+	private Nodo pilha;
+	public Pilha() {
+		this.pilha = null;
+	}
+	public Nodo getPilha() {
+		return pilha;
+	}
+	public void setPilha(Nodo pilha) {
+		this.pilha = pilha;
+	}
+	public void insereNodoInicio(int valor) {
+		Nodo novo = new Nodo();
+		novo.setValor(valor);
+		novo.setProx(this.pilha);
+		this.pilha = novo;
+	}
+	public void removeNodoInicio() {
+		if (this.pilha == null) {
+			System.out.println("Lista vazia!");
+		} else {
+			this.pilha = this.pilha.getProx();
+		}
+	}
+  public void insereNodo(int valor) {
+		Nodo novo = new Nodo();
+		novo.setValor(valor);
+		novo.setProx(null);
+
+		if (this.fila == null) {
+			this.fila = novo;
+		} else {
+			Nodo aux = fila;
+			while (aux.getProx() != null) {
+				aux = aux.getProx();
+			}
+			aux.setProx(novo);
+		}
+	}
+	public void imprime() {
+		if (this.pilha == null) {
+			System.out.println("Lista vazia!");
+		} else {
+			Nodo aux = this.pilha;
+			while (aux != null) {
+				System.out.println("Valor: " + aux.getValor());
+				aux = aux.getProx();
+			}
+		}
+	}
+	public void pesquisa(int valor) {
+		if (this.pilha == null) {
+			System.out.println("Lista vazia!");
+		} else {
+			boolean achou = false;
+			Nodo aux = this.pilha;
+			while (aux != null && !achou) {
+				if (valor == aux.getValor()) {
+					achou = true;
+				}
+				aux = aux.getProx();
+			}
+			if(achou) {
+				System.out.println("Valor encontrado!");
+			} else {
+				System.out.println("Valor não encontrado!");
+			}
+		}
+		
+		
+		
+	}
+}
 
