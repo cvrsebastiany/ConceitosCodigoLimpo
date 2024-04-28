@@ -27,10 +27,10 @@ public class Pilha {
 		novo.setValor(valor);
 		novo.setProx(null);
 
-		if (this.fila == null) {
-			this.fila = novo;
+		if (this.pilha == null) {
+			this.pilha = novo;
 		} else {
-			Nodo aux = fila;
+			Nodo aux = pilha;
 			while (aux.getProx() != null) {
 				aux = aux.getProx();
 			}
