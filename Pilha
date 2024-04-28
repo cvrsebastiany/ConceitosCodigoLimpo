@@ -1,20 +1,27 @@
+package atividade;
+
 public class Pilha {
 	private Nodo pilha;
+
 	public Pilha() {
 		this.pilha = null;
 	}
+
 	public Nodo getPilha() {
 		return pilha;
 	}
+
 	public void setPilha(Nodo pilha) {
 		this.pilha = pilha;
 	}
+
 	public void insereNodoInicio(int valor) {
 		Nodo novo = new Nodo();
 		novo.setValor(valor);
 		novo.setProx(this.pilha);
 		this.pilha = novo;
 	}
+
 	public void removeNodoInicio() {
 		if (this.pilha == null) {
 			System.out.println("Lista vazia!");
@@ -22,21 +29,7 @@ public class Pilha {
 			this.pilha = this.pilha.getProx();
 		}
 	}
-  public void insereNodo(int valor) {
-		Nodo novo = new Nodo();
-		novo.setValor(valor);
-		novo.setProx(null);
 
-		if (this.pilha == null) {
-			this.pilha = novo;
-		} else {
-			Nodo aux = pilha;
-			while (aux.getProx() != null) {
-				aux = aux.getProx();
-			}
-			aux.setProx(novo);
-		}
-	}
 	public void imprime() {
 		if (this.pilha == null) {
 			System.out.println("Lista vazia!");
@@ -48,6 +41,7 @@ public class Pilha {
 			}
 		}
 	}
+
 	public void pesquisa(int valor) {
 		if (this.pilha == null) {
 			System.out.println("Lista vazia!");
@@ -66,9 +60,6 @@ public class Pilha {
 				System.out.println("Valor não encontrado!");
 			}
 		}
-		
-		
-		
 	}
 }
 
